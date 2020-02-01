@@ -1,6 +1,6 @@
-import { Component } from "react";
+import React from "react";
 
-class Homepage extends Component{
+class Homepage extends React.Component{
 
     render(){
         return(
@@ -10,8 +10,4 @@ class Homepage extends Component{
         );
     }
 }
-
-ReactDOM.render(
-    <HelloMessage name = "Jimmy" />,
-    document.getElementById('hello-example')
-)
+export default Homepage;
