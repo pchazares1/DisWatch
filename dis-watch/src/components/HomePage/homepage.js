@@ -34,13 +34,6 @@ class Homepage extends React.Component{
     }
 
     render(){
-        firebase.firestore().collection('Reports').onSnapshot((snapshot => {
-            snapshot.docs.forEach(document => {
-                console.log(document.data())
-            })
-
-        }));
-
         return(
             <div className={"container"}>
                 DisWatch {this.props.name}
