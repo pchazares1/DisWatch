@@ -1,0 +1,1 @@
+import Marker from 'google-maps-react';  
