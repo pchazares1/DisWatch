@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import  * as firebase from'firebase';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
 var config={
     apiKey: "AIzaSyBDEllUUJas4n_DkmMPGbxIfAC8b9q2UU4",
     authDomain: "diswatch.firebaseapp.com",
@@ -17,6 +17,8 @@ var config={
     measurementId: "G-895E1JRDLB"
 }
 firebase.initializeApp(config);
+ReactDOM.render(<App />, document.getElementById('root'));
+
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
