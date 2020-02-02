@@ -4,15 +4,16 @@ import firebase from "firebase";
 import './homepage.css';
 
 class Homepage extends React.Component{
-    month; day; hour;
-    add(coords) {
+    month; day; hour; disType;
+    add(id,coords) {
         this.findDate();
         firebase.firestore().collection("Reports").add({
             x: coords.coords.latitude,
             y: coords.coords.longitude,
             month: this.month,
             day: this.day,
-            totalTime: this.hour +''+ this.min
+            totalTime: this.hour +''+ this.min,
+            disType: id
         });
     }
 
@@ -25,10 +26,10 @@ class Homepage extends React.Component{
 
     }
 
-    findLocation(){
+    findLocation(id){
         navigator.geolocation.getCurrentPosition((coords) => {
             // This == HomePage
-            this.add(coords)
+            this.add(id,coords)
         }, console.log)
     }
 
