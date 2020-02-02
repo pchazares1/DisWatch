@@ -1,0 +1,20 @@
+button{
+    width: 300px;
+    height: 300px;
+}
+
+.flood{
+    background-color: #99f;
+}
+
+.tornado{
+    background-color: #999;
+}
+
+.fire{
+    background-color: #f99;
+}
+
+.earthquake{
+    background-color: sandybrown;
+}

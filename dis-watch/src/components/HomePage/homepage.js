@@ -1,6 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import firebase from "firebase";
+import './homepage.css';
 
 class Homepage extends React.Component{
     month; day; hour;
@@ -41,17 +42,18 @@ class Homepage extends React.Component{
 
         return(
             <div class="container">
-                Hello {this.props.name}
+                DisWatch {this.props.name}
                     <div class="row">
 
                         {/* <button class="btn btn-primary" type="submit">Hello World</button> */}
-                        <button class="btn btn-danger" type="submit">Fire</button>
-                        <button class="btn btn-secondary" type="submit">Tornado</button>
+                        <button class="button fire" id={"fire"} type="submit" onClick={this.findLocation.bind(this)}>Fire</button>
+                        <button class="button tornado" id={"tornado"} type="submit" onClick={this.findLocation.bind(this)}>Tornado</button>
 
-                        </div>
-                        <div class="row">
-                            <button type="button" onClick={this.findLocation.bind(this)}>Flood</button>
-                            <button type="button">Earthquake</button>
+                    </div>
+
+                    <div class="row">
+                        <button class="button flood" id={"flood"} type="submit" onClick={this.findLocation.bind(this)}>Flood</button>
+                        <button class="button earthquake" id={"earthquake"} type="submit" onClick={this.findLocation.bind(this)}>Earthquake</button>
 
                     </div>
             </div>
