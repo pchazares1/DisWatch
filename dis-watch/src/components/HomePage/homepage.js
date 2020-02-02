@@ -4,15 +4,16 @@ import firebase from "firebase";
 import './homepage.css';
 
 class Homepage extends React.Component{
-    month; day; hour;
-    add(coords) {
+    month; day; hour; disType;
+    add(id,coords) {
         this.findDate();
         firebase.firestore().collection("Reports").add({
             x: coords.coords.latitude,
             y: coords.coords.longitude,
             month: this.month,
             day: this.day,
-            totalTime: this.hour +''+ this.min
+            totalTime: this.hour +''+ this.min,
+            disType: id
         });
     }
 
@@ -25,10 +26,10 @@ class Homepage extends React.Component{
 
     }
 
-    findLocation(){
+    findLocation(id){
         navigator.geolocation.getCurrentPosition((coords) => {
             // This == HomePage
-            this.add(coords)
+            this.add(id,coords)
         }, console.log)
     }
 
@@ -46,14 +47,14 @@ class Homepage extends React.Component{
                     <div class="row">
 
                         {/* <button class="btn btn-primary" type="submit">Hello World</button> */}
-                        <button class="button fire" id={"fire"} type="submit" onClick={this.findLocation.bind(this)}>Fire</button>
-                        <button class="button tornado" id={"tornado"} type="submit" onClick={this.findLocation.bind(this)}>Tornado</button>
+                        <button class="button fire" id={"fire"} type="submit" onClick={this.findLocation("fire")}>Fire</button>
+                        <button class="button tornado" id={"tornado"} type="submit" onClick={this.findLocation("tornado")}>Tornado</button>
 
                     </div>
 
                     <div class="row">
-                        <button class="button flood" id={"flood"} type="submit" onClick={this.findLocation.bind(this)}>Flood</button>
-                        <button class="button earthquake" id={"earthquake"} type="submit" onClick={this.findLocation.bind(this)}>Earthquake</button>
+                        <button class="button flood" id={"flood"} type="submit" onClick={this.findLocation("flood")}>Flood</button>
+                        <button class="button earthquake" id={"earthquake"} type="submit" onClick={this.findLocation("earthquake")}>Earthquake</button>
 
                     </div>
             </div>
