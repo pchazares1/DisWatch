@@ -1,20 +1,22 @@
-button{
+.dis-button{
     width: 300px;
     height: 300px;
+    font-size: 45px;
+    font-family: sans-serif;
 }
 
-.flood{
+#flood{
     background-color: #99f;
 }
 
-.tornado{
+#tornado{
     background-color: #999;
 }
 
-.fire{
+#fire{
     background-color: #f99;
 }
 
-.earthquake{
+#earthquake{
     background-color: sandybrown;
 }

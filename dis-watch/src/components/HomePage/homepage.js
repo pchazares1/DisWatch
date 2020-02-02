@@ -41,19 +41,19 @@ class Homepage extends React.Component{
         }));
 
         return(
-            <div class="container">
+            <div className={"container"}>
                 DisWatch {this.props.name}
-                    <div class="row">
+                    <div className={"row"}>
 
                         {/* <button class="btn btn-primary" type="submit">Hello World</button> */}
-                        <button class="button fire" id={"fire"} type="submit" onClick={this.findLocation.bind(this)}>Fire</button>
-                        <button class="button tornado" id={"tornado"} type="submit" onClick={this.findLocation.bind(this)}>Tornado</button>
+                        <button className={"dis-button"} id={"fire"} type="submit" onClick={this.findLocation.bind(this)}>Fire</button>
+                        <button className={"dis-button"} id={"tornado"} type="submit" onClick={this.findLocation.bind(this)}>Tornado</button>
 
                     </div>
 
-                    <div class="row">
-                        <button class="button flood" id={"flood"} type="submit" onClick={this.findLocation.bind(this)}>Flood</button>
-                        <button class="button earthquake" id={"earthquake"} type="submit" onClick={this.findLocation.bind(this)}>Earthquake</button>
+                    <div className={"row"}>
+                        <button className={"dis-button"} id={"flood"} type="submit" onClick={this.findLocation.bind(this)}>Flood</button>
+                        <button className={"dis-button"} id={"earthquake"} type="submit" onClick={this.findLocation.bind(this)}>Earthquake</button>
 
                     </div>
             </div>
