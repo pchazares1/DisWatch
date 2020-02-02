@@ -9,19 +9,15 @@ const mapsStyles = {
 export class MapContainer extends React.Component{
     render() {
         return (
-            <div>
-                <Map 
+            <Map
                 google={this.props.google}
-                zoom={8}
+                zoom={17}
                 style={mapsStyles}
-                > 
-                <Marker onClick={this.onMarkerClick}
-                    name={'Current location'} />
+                initialCenter={{lat: '29.6477', lng: '-82.343'}}
+            >
 
-                 </Map>
-
-            </div>
-            
+            <Marker position={{lat: '29.6467', lng: '-82.32'}} />
+            </Map>
         );
     }
 }
