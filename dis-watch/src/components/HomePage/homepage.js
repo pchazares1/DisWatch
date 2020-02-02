@@ -3,13 +3,32 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import firebase from "firebase";
 
 class Homepage extends React.Component{
-
-    add() {
+    month; day; hour;
+    add(coords) {
+        this.findDate();
         firebase.firestore().collection("Reports").add({
-            test: "hello",
-            x: 1,
-            y: 2
+            x: coords.coords.latitude,
+            y: coords.coords.longitude,
+            month: this.month,
+            day: this.day,
+            totalTime: this.hour +''+ this.min
         });
+    }
+
+    findDate(){
+        var d = new Date();
+        this.month = d.getMonth();
+        this.day = d.getDate();
+        this.hour = d.getHours();
+        this.min = d.getMinutes();
+
+    }
+
+    findLocation(){
+        navigator.geolocation.getCurrentPosition((coords) => {
+            // This == HomePage
+            this.add(coords)
+        }, console.log)
     }
 
     render(){
@@ -31,7 +50,7 @@ class Homepage extends React.Component{
 
                         </div>
                         <div class="row">
-                            <button type="button" onClick={this.add}>Flood</button>
+                            <button type="button" onClick={this.findLocation.bind(this)}>Flood</button>
                             <button type="button">Earthquake</button>
 
                     </div>
